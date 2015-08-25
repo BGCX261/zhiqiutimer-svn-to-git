@@ -1,0 +1,6 @@
+## Author: Noria
+## Interface: 40100
+## Title: TargetTextBuffs
+## Version: 1.0
+TargetTextBuffs.xml
+TargetTextBuffs.lua

@@ -1,0 +1,156 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="H:\Wowlua\Interface\Interface\FrameXML\UI.xsd">
+        <Script file="TargetTextBuffs.lua" />
+    <Button name="TargetTextFrame1" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="UIParent"  >
+                <Size x="50" y="50"/>
+                <Anchors>
+                        <Anchor point="CENTER" relativePoint="CENTER">
+                                <Offset x="-220" y="0" />
+                        </Anchor>
+                </Anchors>
+
+         <Layers>
+             <Layer>
+                 <Texture name="$parentClassIcon" level =  "BACKGROUND"  file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"  SetAllPoints="true" parentKey="ClassIcon">
+
+                 </Texture>
+             </Layer>
+         </Layers>
+            <Scripts>
+                <OnLoad>
+                    self:SetScript("OnMouseDown",function()
+                        self:StartMoving()
+                    end)
+                   self:SetScript("OnMouseUp",function()
+                      self:StopMovingOrSizing()
+                    end)
+                    self:Hide()
+                </OnLoad>
+                <OnDragStart>
+                    self:StartMoving()
+                </OnDragStart>
+                <OnDragStop>
+                    self:StopMovingOrSizing()
+                </OnDragStop>
+            </Scripts>
+        </Button>
+    <Button name="TargetTextFrame2" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="TargetTextFrame1"  >
+                <Size x="50" y="50"/>
+                <Anchors>
+                        <Anchor point="TOP" relativePoint="BOTTOM"/>
+                </Anchors>
+
+                 <Layers>
+                     <Layer>
+                     <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+                     </Texture>
+                       </Layer>
+                 </Layers>
+
+            <Scripts>
+                <OnLoad>
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , ZQTIMER_FRAME_OFFSET_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+                </Button>
+    <Button name="TargetTextFrame3" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="TargetTextFrame1"   >
+     <Size x="50" y="50"/>
+     <Anchors>
+                        <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+         <Attribites>
+             <Attribute name = "unit" value = "arena3"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y)
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+    <Button name="TargetTextFrame4" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="TargetTextFrame1"    >
+     <Size x="50" y="50"/>
+     <Anchors>
+         <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+
+         <Attribites>
+             <Attribute name = "unit" value = "arena4"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y) * 2
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+    <Button name="TargetTextFrame5" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="TargetTextFrame1"    >
+     <Size x="50" y="50"/>
+     <Anchors>
+         <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+
+                 <Attribites>
+             <Attribute name = "unit" value = "arena5"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y) * 3
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+
+        <Frame name="TargetTextBuffsFrame" parent="TargetTextFrame"     >
+                <Size x="1" y="1" />
+                <Anchors>
+                        <Anchor point="LEFT" relativePoint="TOPRIGHT" >
+                                <Offset x="40" y="0" />
+                        </Anchor>
+                </Anchors>
+                <Scripts>
+                        <OnLoad>
+                                TargetTextBuffs:OnLoad(self)
+                        </OnLoad>
+                        <OnEvent>
+                  TargetTextBuffs:OnEvent(event, ...)
+                        </OnEvent>
+                </Scripts>
+        </Frame>
+      <!--  <Frame name="TargetTextBuffsDebuffTemplate" inherits="TargetDebuffButtonTemplate" virtual="true" >
+
+                <Size x="21" y="21" />
+                <Scripts>
+                        <OnLoad>
+                                local border = _G[self:GetName().."Border"]
+                                border:SetWidth(23)
+                                border:SetHetght(23)
+                        </OnLoad>
+                </Scripts>
+        </Frame>           -->
+</Ui>

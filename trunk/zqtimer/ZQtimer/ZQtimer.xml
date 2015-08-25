@@ -1,0 +1,340 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="H:\Wowlua\Interface\Interface\FrameXML\UI.xsd">
+        <Script file="ZQtimer.lua" />
+    <Button name="ZQtimerFrame1" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="UIParent"  >
+                <Size x="50" y="50"/>
+                <Anchors>
+                        <Anchor point="CENTER" relativePoint="CENTER">
+                                <Offset x="-220" y="0" />
+                        </Anchor>
+                </Anchors>
+
+         <Layers>
+             <Layer>
+                 <Texture name="$parentClassIcon" level =  "BACKGROUND"  file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"  SetAllPoints="true" parentKey="ClassIcon">
+
+                 </Texture>
+
+
+
+             </Layer>
+         </Layers>
+         <Frames>
+                 <StatusBar name = "$parentHealthBar">
+                  	<Anchors>
+			    		<Anchor point="BOTTOM" />
+				    </Anchors>
+
+                    <Scripts>
+                        <OnLoad>
+                              ZQtimer:Initial_HealthBar(self)
+                        </OnLoad>
+                    </Scripts>
+                 </StatusBar>
+         </Frames>
+            <Scripts>
+                <OnLoad>
+                    self:RegisterForClicks("AnyUp", "AnyDown")
+                    self:SetScript("OnMouseDown",function()
+                        self:StartMoving()
+                    end)
+                   self:SetScript("OnMouseUp",function()
+                      self:StopMovingOrSizing()
+                    end)
+                    self:Hide()
+                </OnLoad>
+                <OnDragStart>
+                    self:StartMoving()
+                </OnDragStart>
+                <OnDragStop>
+                    self:StopMovingOrSizing()
+                </OnDragStop>
+            </Scripts>
+        </Button>
+    <Button name="ZQtimerFrame2" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="ZQtimerFrame1"  >
+                <Size x="50" y="50"/>
+                <Anchors>
+                        <Anchor point="TOP" relativePoint="BOTTOM"/>
+                </Anchors>
+
+                 <Layers>
+                     <Layer>
+                     <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+                     </Texture>
+                       </Layer>
+                 </Layers>
+         <Frames>
+                 <StatusBar name = "$parentHealthBar">
+                  	<Anchors>
+			    		<Anchor point="BOTTOM" />
+				    </Anchors>
+                    <Scripts>
+                        <OnLoad>
+                              ZQtimer:Initial_HealthBar(self)
+                        </OnLoad>
+                    </Scripts>
+                 </StatusBar>
+         </Frames>
+            <Scripts>
+                <OnLoad>
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , -ZQTIMER_FRAME_OFFSET_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+                </Button>
+    <Button name="ZQtimerFrame3" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="ZQtimerFrame1"   >
+     <Size x="50" y="50"/>
+     <Anchors>
+                        <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+         <Attribites>
+             <Attribute name = "unit" value = "arena3"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+         <Frames>
+                 <StatusBar name = "$parentHealthBar">
+                  	<Anchors>
+			    		<Anchor point="BOTTOM" />
+				    </Anchors>
+                    <Scripts>
+                        <OnLoad>
+                              ZQtimer:Initial_HealthBar(self)
+                        </OnLoad>
+                    </Scripts>
+                 </StatusBar>
+         </Frames>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y)
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , -frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+    <Button name="ZQtimerFrame4" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="ZQtimerFrame1"    >
+     <Size x="50" y="50"/>
+     <Anchors>
+         <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+
+         <Attribites>
+             <Attribute name = "unit" value = "arena4"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+         <Frames>
+                 <StatusBar name = "$parentHealthBar">
+                  	<Anchors>
+			    		<Anchor point="BOTTOM" />
+				    </Anchors>
+                    <Scripts>
+                        <OnLoad>
+                           ZQtimer:Initial_HealthBar(self)
+                        </OnLoad>
+                    </Scripts>
+                 </StatusBar>
+         </Frames>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y) * 2
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , -frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+    <Button name="ZQtimerFrame5" movable = "true" enableMouse="true" inherits="SecureUnitButtonTemplate" parent="ZQtimerFrame1"    >
+     <Size x="50" y="50"/>
+     <Anchors>
+         <Anchor point="TOP" relativePoint="BOTTOM"/>
+     </Anchors>
+
+                 <Attribites>
+             <Attribute name = "unit" value = "arena5"    />
+         </Attribites>
+      <Layers>
+          <Layer>
+          <Texture name="$parentClassIcon" file="Interface\GLUES\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES"    SetAllPoints="true" parentKey="ClassIcon">
+
+          </Texture>
+            </Layer>
+      </Layers>
+         <Frames>
+                 <StatusBar name = "$parentHealthBar">
+                  	<Anchors>
+			    		<Anchor point="BOTTOM" />
+				    </Anchors>
+                    <Scripts>
+                        <OnLoad>
+                                 ZQtimer:Initial_HealthBar(self)
+                        </OnLoad>
+                    </Scripts>
+                 </StatusBar>
+         </Frames>
+                    <Scripts>
+                <OnLoad>
+                    local frame_Offset_Y = ZQTIMER_FRAME_OFFSET_Y + (ZQTIMER_FRAME_SIZE + ZQTIMER_FRAME_OFFSET_Y) * 3
+                    self:SetPoint("TOP",self:GetParent(), "BOTTOM", 0 , -frame_Offset_Y)
+                    self:Hide()
+                </OnLoad>
+            </Scripts>
+     </Button>
+
+        <Frame name="ZQtimerBuffsFrame" parent="ZQtimerFrame"     >
+                <Size x="1" y="1" />
+                <Anchors>
+                        <Anchor point="LEFT" relativePoint="TOPRIGHT" >
+                                <Offset x="40" y="0" />
+                        </Anchor>
+                </Anchors>
+                <Scripts>
+                        <OnLoad>
+                              ZQtimer:OnLoad(self)
+                        </OnLoad>
+                        <OnEvent>
+                              ZQtimer:OnEvent(event, ...)
+                        </OnEvent>
+                </Scripts>
+        </Frame>
+        <Frame name="ZQtimerBuffsDebuffTemplate" inherits="TargetBuffButtonTemplate" virtual="true" >
+
+                <Size x="21" y="21" />
+        </Frame>
+
+      	<Frame name="ZQtimerTargeted">
+		<Size x="50" y="50"/>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER"/>
+		</Anchors>
+           <Animations>
+            <AnimationGroup parentKey="animIn">
+                <Scale target="$parentSpark" duration="0.2" scaleX="1.5" scaleY="1.5" order="1"/>
+                <Alpha target="$parentSpark" duration="0.2" change="1" order="1"/>
+                <Scale target="$parentInnerGlow"             duration="0.3" scaleX="2" scaleY="2" order="1"/>
+                <Scale target="$parentInnerGlowOver"     duration="0.3" scaleX="2" scaleY="2" order="1"/>
+                <Alpha target="$parentInnerGlowOver" duration="0.3" change="-1" order="1"/>
+                <Scale target="$parentOuterGlow"             duration="0.3" scaleX="0.5" scaleY="0.5" order="1"/>
+                <Scale target="$parentOuterGlowOver"     duration="0.3" scaleX="0.5" scaleY="0.5" order="1"/>
+                <Alpha target="$parentOuterGlowOver" duration="0.3" change="-1" order="1"/>
+                <Scale target="$parentSpark" startDelay="0.2" duration="0.2" scaleX="0.666666" scaleY="0.666666" order="1"/>
+                <Alpha target="$parentSpark" startDelay="0.2" duration="0.2" change="-1" order="1"/>
+                <Alpha target="$parentInnerGlow" startDelay="0.3" duration="0.2" change="-1" order="1"/>
+                <Alpha target="$parentAnts"  startDelay="0.3" duration="0.2" change="1" order="1"/>
+                <Scripts>
+                    <OnPlay>
+                        local frame = self:GetParent();
+                        local frameWidth, frameHeight = frame:GetSize();
+                        frame.spark:SetSize(frameWidth, frameHeight);
+                        frame.spark:SetAlpha(0.3)
+                        frame.innerGlow:SetSize(frameWidth / 0.9, frameHeight / 0.9);
+                        frame.innerGlow:SetAlpha(1.0);
+                        frame.innerGlowOver:SetAlpha(1.0);
+                        frame.outerGlow:SetSize(frameWidth * 2, frameHeight * 2);
+                        frame.outerGlow:SetAlpha(0.0);
+                        frame.outerGlowOver:SetAlpha(1.0);
+                        frame.ants:SetSize(frameWidth , frameHeight )
+                        frame.ants:SetAlpha(0);
+                        frame:Show();
+                    </OnPlay>
+                    <OnFinished>
+                        local frame = self:GetParent();
+                        local frameWidth, frameHeight = frame:GetSize();
+                        frame.spark:SetAlpha(0);
+                        frame.innerGlow:SetAlpha(0);
+                        frame.innerGlow:SetSize(frameWidth, frameHeight);
+                        frame.innerGlowOver:SetAlpha(0.0);
+                        frame.outerGlow:SetSize(frameWidth, frameHeight);
+                        frame.outerGlowOver:SetAlpha(0.0);
+                        frame.outerGlowOver:SetSize(frameWidth, frameHeight);
+                        frame.ants:SetAlpha(1.0);
+                    </OnFinished>
+                </Scripts>
+            </AnimationGroup>
+            <AnimationGroup parentKey="animOut">
+                <Alpha target="$parentOuterGlowOver" duration="0.2" change="1" order="1"/>
+                <Alpha target="$parentAnts"  duration="0.2" change="-1" order="1"/>
+                <Alpha target="$parentOuterGlowOver" duration="0.2" change="-1" order="2"/>
+                <Alpha target="$parentOuterGlow" duration="0.2" change="-1" order="2"/>
+                <Scripts>
+                    <OnFinished>
+                        ActionButton_OverlayGlowAnimOutFinished(self);
+                    </OnFinished>
+                </Scripts>
+            </AnimationGroup>
+        </Animations>
+         <Layers>
+                       <Layer level="BACKGROUND">
+                <Texture name="$parentSpark" parentKey="spark" file="Interface\SpellActivationOverlay\IconAlert" alpha="0" setAllPoints="true">
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                    <TexCoords left="0.00781250" right="0.61718750" top="0.00390625" bottom="0.26953125"/>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentInnerGlow" parentKey="innerGlow" file="Interface\SpellActivationOverlay\IconAlert" alpha="0" setAllPoints="true">
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                    <TexCoords left="0.00781250" right="0.50781250" top="0.27734375" bottom="0.52734375"/>
+                </Texture>
+                <Texture name="$parentInnerGlowOver" parentKey="innerGlowOver" file="Interface\SpellActivationOverlay\IconAlert" alpha="0">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentInnerGlow" relativePoint="TOPLEFT"/>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="$parentInnerGlow" relativePoint="BOTTOMRIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0.00781250" right="0.50781250" top="0.53515625" bottom="0.78515625"/>
+                </Texture>
+                <Texture name="$parentOuterGlow" parentKey="outerGlow" file="Interface\SpellActivationOverlay\IconAlert" alpha="0" setAllPoints="true">
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                    <TexCoords left="0.00781250" right="0.50781250" top="0.27734375" bottom="0.52734375"/>
+                </Texture>
+                <Texture name="$parentOuterGlowOver" parentKey="outerGlowOver" file="Interface\SpellActivationOverlay\IconAlert" alpha="0">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentOuterGlow" relativePoint="TOPLEFT"/>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="$parentOuterGlow" relativePoint="BOTTOMRIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0.00781250" right="0.50781250" top="0.53515625" bottom="0.78515625"/>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <Texture name="$parentAnts" parentKey="ants" file="Interface\SpellActivationOverlay\IconAlertAnts" alpha="0" setAllPoints="true">
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+         </Layers>
+            <Scripts>
+            <OnUpdate>
+                AnimateTexCoords(self.ants, 256, 256, 48, 48, 22, elapsed, 0.01)
+            </OnUpdate>
+            <OnHide>
+                if ( self.animOut:IsPlaying() ) then
+                    self.animOut:Stop();
+                    ActionButton_OverlayGlowAnimOutFinished(self.animOut);
+                end
+            </OnHide>
+            <OnLoad>
+                self:RegisterEvent("PLAYER_TARGET_CHANGED")
+                self:RegisterEvent("UNIT_NAME_UPDATE")
+                ZQtimerTargeted:SetFrameLevel(7)
+                ZQtimerTargeted.animIn:Play()
+                ZQtimerTargeted:Hide()
+            </OnLoad>
+            </Scripts>
+	</Frame>
+
+</Ui>

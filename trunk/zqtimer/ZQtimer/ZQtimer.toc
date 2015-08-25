@@ -1,0 +1,15 @@
+## Author: Noria
+## Interface: 42000
+## Title: ZQtimer
+## Version: 1.0
+##SavedVariables:ZQTIMER_Buff_Scale
+##SavedVariables:ZQTIMER_FRAME_SIZE
+##SavedVariables:ZQTIMER_FRAME_SIZE
+##SavedVariables:ZQtimer_DisplayBuff
+
+ZQtimer.xml
+ZQtimer.lua
+ZQconfig.lua
+Frame.lua
+Frame.xml
+DeBuffDB.lua

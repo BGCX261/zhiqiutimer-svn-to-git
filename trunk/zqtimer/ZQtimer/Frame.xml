@@ -1,0 +1,353 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Button name="MacroIconTest_IconTemplate" virtual="true">
+		<Size x="160" y="32" />
+		<Anchors>
+			<Anchor point="LEFT" />
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentIcon" setAllPoints="true">
+					<Size>
+						<AbsDimension x="32" y="32" />
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset x="0" y="0" />
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentSpellName" inherits="GameFontNormal">
+					<Size>
+						<AbsDimension x="96" y="32" />
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativePoint="LEFT">
+							<Offset x="32" y="0" />
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="1" b="1" />
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentDelBtn" setAllPoints="true">
+				<Size>
+					<AbsDimension x="32" y="32" />
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT" relativePoint="RIGHT">
+						<Offset x="-2" y="0" />
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD" />
+	</Button>
+	<Frame name="ZQtimerConfig" parent="UIParent" movable="true" enableMouse="true">
+		<Size>
+			<AbsDimension x="803" y="438" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset x="84" y="-104" />
+			</Anchor>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Frame name="ZQtimerButtonPanel" parent="ZQtimerConfig">
+				<Size>
+					<AbsDimension x="196" y="402" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="10" y="-14" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Frames>
+					<Button name="ZQtimerButtonClose" inherits="UIPanelButtonTemplate" text="Close">
+						<Size>
+							<AbsDimension x="166" y="29" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="14" y="-340" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface\BUTTONS\UI-DialogBox-Button-Up" edgeFile="Interface\BUTTONS\UI-SliderBar-Border" tile="true">
+							<TileSize>
+								<AbsValue val="2" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="1" />
+							</EdgeSize>
+						</Backdrop>
+						<Scripts>
+							<OnClick>
+								ZQtimerButtonClose_OnClick();
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="ZQtimerButtonTest" inherits="UIPanelButtonTemplate" text="TEST">
+						<Size>
+							<AbsDimension x="166" y="29" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="14" y="-292" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface\BUTTONS\UI-DialogBox-Button-Up" edgeFile="Interface\BUTTONS\UI-SliderBar-Border" tile="true">
+							<TileSize>
+								<AbsValue val="2" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="1" />
+							</EdgeSize>
+						</Backdrop>
+						<Scripts>
+							<OnClick>
+								ZQtimerButtonTest_OnClick()
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="ZQtimerConfigPanel" parent="ZQtimerConfig">
+				<Size>
+					<AbsDimension x="557" y="401" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="212" y="-15" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture name="ZQtimerAuraCfgIcon" setAllPoints="true">
+							<Size>
+								<AbsDimension x="45" y="45" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="28" y="-167" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString name="ZQtimerCfgStr1" inherits="GameFontNormal" text="Unit Class Size:">
+							<Size>
+								<AbsDimension x="114" y="32" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="28" y="-16" />
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+						<FontString name="ZQtimerCfgStr2" inherits="GameFontNormal" text="BUFF size:">
+							<Size>
+								<AbsDimension x="114" y="32" />
+							</Size>
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="28" y="-68" />
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="1" />
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Slider name="ZqUnitClassResizeSlider" inherits="OptionsSliderTemplate" minValue="10" maxValue="80" valueStep="1">
+						<Size>
+							<AbsDimension x="236" y="32" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="182" y="-16" />
+							</Anchor>
+						</Anchors>
+						<HitRectInsets>
+							<AbsInset left="1" right="1" top="1" bottom="1" />
+						</HitRectInsets>
+						<Scripts>
+							<OnValueChanged>
+								ZqUnitClassResizeSlider_OnValueChanged();
+							</OnValueChanged>
+							<OnLoad>
+								self:SetValue(ZQTIMER_FRAME_SIZE)
+							</OnLoad>
+						</Scripts>
+					</Slider>
+					<Slider name="ZqUnitBuffResizeSlider" inherits="OptionsSliderTemplate" minValue="0.1" maxValue="2" valueStep="0.1">
+						<Size>
+							<AbsDimension x="236" y="32" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="182" y="-68" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnValueChanged>
+								ZqUnitBuffResizeSlider_OnValueChanged();
+							</OnValueChanged>
+							<OnLoad>
+								self:SetValue(ZQTIMER_Buff_Scale)
+								self:RegisterForDrag("LeftButton")
+								self:SetScript("OnMouseUp",ZqUnitBuffResizeSlider_OnButtonUp)
+							</OnLoad>
+						</Scripts>
+					</Slider>
+					<EditBox name="ZQtimerAuraEdit" inherits="InputBoxTemplate" setAllPoints="true">
+						<Size>
+							<AbsDimension x="114" y="27" />
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="28" y="-134" />
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnTextChanged>
+								ZQtimer:ZQtimerAuraEditOnTextChange();
+							</OnTextChanged>
+                            <OnEnterPressed>
+                                 ZQtimer:ZQtimerAuraEditOnEnterPressed();
+                            </OnEnterPressed>
+						</Scripts>
+					</EditBox>
+					<Frame name="MacroIconTest">
+						<Size x="160" y="160" />
+						<Anchors>
+							<Anchor point="CENTER">
+								<Offset x="-16" y="-14" />
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentIcon1" inherits="MacroIconTest_IconTemplate">
+								<Anchors>
+									<Anchor point="TOPLEFT" />
+								</Anchors>
+							</Button>
+							<Button name="$parentIcon2" inherits="MacroIconTest_IconTemplate">
+								<Anchors>
+									<Anchor point="TOP" relativeTo="$parentIcon1" relativePoint="BOTTOM" />
+								</Anchors>
+							</Button>
+							<Button name="$parentIcon3" inherits="MacroIconTest_IconTemplate">
+								<Anchors>
+									<Anchor point="TOP" relativeTo="$parentIcon2" relativePoint="BOTTOM" />
+								</Anchors>
+							</Button>
+							<Button name="$parentIcon4" inherits="MacroIconTest_IconTemplate">
+								<Anchors>
+									<Anchor point="TOP" relativeTo="$parentIcon3" relativePoint="BOTTOM" />
+								</Anchors>
+							</Button>
+							<Button name="$parentIcon5" inherits="MacroIconTest_IconTemplate">
+								<Anchors>
+									<Anchor point="TOP" relativeTo="$parentIcon4" relativePoint="BOTTOM" />
+								</Anchors>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnLoad>
+								self:RegisterEvent("PLAYER_LOGIN")
+							</OnLoad>
+							<OnEvent>
+								if event == "PLAYER_LOGIN" then
+								GetNumMacroIcons()
+								MacroIconTest_UpdateIcons(1)
+								end
+							</OnEvent>
+							<OnMouseWheel>
+								MacroIconTest_OnMouseWheel(self, delta)
+							</OnMouseWheel>
+						</Scripts>
+					</Frame>
+					<Slider name="MacroIconTest_HSlider" minValue="0" maxValue="0">
+						<Size x="25" y="160" />
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="MacroIconTest" relativePoint="TOPRIGHT">
+								<Offset x="6" y="0" />
+							</Anchor>
+							<Anchor point="BOTTOMLEFT" relativeTo="MacroIconTest" relativePoint="BOTTOMRIGHT">
+								<Offset x="6" y="0" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background" edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="true">
+							<BackgroundInsets>
+								<AbsInset left="3" right="3" top="6" bottom="6" />
+							</BackgroundInsets>
+							<TileSize>
+								<AbsValue val="8" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="8" />
+							</EdgeSize>
+						</Backdrop>
+						<Scripts>
+							<OnLoad>
+                              MacroIconTest_HSlider_OnLoad(self)
+							</OnLoad>
+							<OnValueChanged>
+								MacroIconTest_UpdateIcons(value)
+							</OnValueChanged>
+						</Scripts>
+						<ThumbTexture name="$parentThumbTexture" file="Interface\Buttons\UI-ScrollBar-Knob">
+							<Size x="25" y="25" />
+						</ThumbTexture>
+					</Slider>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				self:SetScript("OnMouseDown",function()
+				self:StartMoving()
+				end)
+				self:SetScript("OnMouseUp",function()
+				self:StopMovingOrSizing()
+				end)
+				self:Hide()
+			</OnLoad>
+		</Scripts>
+	</Frame>
+</Ui>
